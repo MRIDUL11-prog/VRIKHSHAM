@@ -246,3 +246,227 @@ footer {
 .feature-card:hover {
     transform: translateY(-6px);
 }
+
+
+/* ==============================
+   VRIKHSHAM RESPONSIVE NAVBAR
+================================ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    max-width: 1250px;
+    min-height: 82px;
+    margin: auto;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #174d2b;
+}
+
+.logo-icon {
+    font-size: 36px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo-text small {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-top: 3px;
+    color: #66816d;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #354b3b;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    background: #267a43;
+}
+
+/* UNIQUE AI BADGE */
+
+.nav-badge {
+    background: #e9f6eb;
+    color: #267a43;
+    padding: 9px 14px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: #267a43;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #123d27;
+    color: white;
+    padding: 45px 8% 18px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 10px;
+}
+
+.footer-brand p,
+.footer-message p {
+    color: #d0e5d4;
+}
+
+.footer-message {
+    text-align: right;
+}
+
+.footer-message small {
+    color: #a9c9b0;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #c4d9c9;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-badge {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 12px 16px;
+    }
+
+    .logo-icon {
+        font-size: 30px;
+    }
+
+    .logo-text {
+        font-size: 19px;
+    }
+
+    .logo-text small {
+        font-size: 9px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-message {
+        text-align: left;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

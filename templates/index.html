@@ -1,171 +1,803 @@
 
 {% extends "base.html" %}
 
-{% block title %}Home | VRIKHSHAM{% endblock %}
+{% block title %}Home | VRIKHSHAM - Nature, Powered by Intelligence{% endblock %}
 
 {% block content %}
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content">
+<style>
 
-        <p class="tagline">WELCOME TO VRIKHSHAM</p>
+/* =========================================
+   VRIKHSHAM HOMEPAGE DESIGN
+========================================= */
 
-        <h1>Grow Smarter.<br>Live Greener.</h1>
+.homepage {
+    overflow: hidden;
+    background: #ffffff;
+}
 
-        <h2>Nature, Powered by Intelligence.</h2>
+/* HERO SECTION */
 
-        <p>
-            Discover intelligent ways to identify plants,
-            understand plant diseases and take better care
-            of your garden.
-        </p>
+.hero {
+    min-height: 590px;
+    padding: 80px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    background:
+        radial-gradient(circle at 80% 25%, rgba(113, 186, 119, 0.19), transparent 30%),
+        linear-gradient(120deg, #eff8ef, #ffffff, #e7f4e7);
+}
 
-        <a href="#features" class="btn">
-            Explore Features
-        </a>
+.hero-content {
+    max-width: 620px;
+    animation: fadeUp 0.9s ease;
+}
 
-    </div>
-</section>
+.tagline {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #dff1e1;
+    color: #267a43;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 25px 0 15px;
+    color: #153e28;
+    font-size: clamp(45px, 5.5vw, 72px);
+    line-height: 1.1;
+    font-weight: 850;
+}
+
+.hero h1 span {
+    color: #399653;
+}
+
+.hero h2 {
+    color: #347b49;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero-description {
+    max-width: 540px;
+    color: #637568;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    background: #267a43;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    border: 1px solid #267a43;
+}
+
+.btn:hover {
+    background: #155b31;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(38, 122, 67, 0.2);
+}
+
+.btn-outline {
+    color: #267a43;
+    background: white;
+}
+
+.btn-outline:hover {
+    color: white;
+}
+
+.hero-note {
+    margin-top: 25px;
+    color: #7b8c7e;
+    font-size: 13px;
+}
+
+/* HERO VISUAL */
+
+.hero-visual {
+    position: relative;
+    width: 390px;
+    height: 390px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant-circle {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d9efd9, #a5d5aa);
+    box-shadow: 0 25px 60px rgba(42, 117, 59, 0.17);
+    animation: floating 4s ease-in-out infinite;
+}
+
+.plant-emoji {
+    font-size: 145px;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.12));
+}
+
+.floating-info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+    border: 1px solid #e1eee2;
+}
+
+.floating-info .info-icon {
+    font-size: 26px;
+}
+
+.floating-info strong,
+.floating-info small {
+    display: block;
+}
+
+.floating-info strong {
+    color: #244d32;
+    font-size: 13px;
+}
+
+.floating-info small {
+    color: #819087;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.info-top {
+    top: 30px;
+    right: -15px;
+}
+
+.info-bottom {
+    bottom: 30px;
+    left: -25px;
+}
+
+/* FEATURES SECTION */
+
+.features {
+    padding: 85px 8%;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-label {
+    color: #32834b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #183f29;
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #78877b;
+    font-size: 15px;
+}
+
+.feature-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    display: block;
+    min-height: 230px;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #e5eee5;
+    background: linear-gradient(145deg, #ffffff, #f5faf5);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 7px 25px rgba(20, 70, 35, 0.045);
+    transition: all 0.35s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-9px);
+    border-color: #9dcea5;
+    box-shadow: 0 18px 35px rgba(20, 90, 40, 0.12);
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #e4f3e5;
+    font-size: 29px;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.feature-card h3 {
+    color: #214b30;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #78877b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    padding: 85px 10%;
+    text-align: center;
+    background: linear-gradient(120deg, #eff8ef, #e6f3e7);
+}
+
+.about-label {
+    color: #34844b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about h2 {
+    color: #183f29;
+    font-size: 35px;
+    margin: 15px 0 22px;
+}
+
+.about p {
+    max-width: 820px;
+    margin: auto;
+    color: #637568;
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* CALL TO ACTION */
+
+.cta {
+    margin: 75px 8%;
+    padding: 65px 25px;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #12452c, #267a43, #399653);
+    box-shadow: 0 20px 40px rgba(30, 100, 50, 0.16);
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #d7eddb;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.cta .btn {
+    background: white;
+    color: #236c3c;
+    border-color: white;
+}
+
+.cta .btn:hover {
+    background: #e8f5e9;
+    color: #174d2b;
+}
+
+/* ANIMATIONS */
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 950px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin: 20px auto;
+        max-width: 100%;
+    }
+
+    .feature-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        width: 290px;
+        height: 290px;
+    }
+
+    .plant-circle {
+        width: 235px;
+        height: 235px;
+    }
+
+    .plant-emoji {
+        font-size: 105px;
+    }
+
+    .floating-info {
+        padding: 10px;
+    }
+
+    .info-top {
+        right: -5px;
+    }
+
+    .info-bottom {
+        left: -5px;
+    }
+
+    .features {
+        padding: 60px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .feature-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .about {
+        padding: 60px 22px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    .about p {
+        font-size: 14px;
+    }
+
+    .cta {
+        margin: 45px 18px;
+        padding: 45px 20px;
+    }
+
+    .cta h2 {
+        font-size: 26px;
+    }
+}
 
 
-<!-- FEATURES SECTION -->
-<section class="features" id="features">
+/* =========================================
+   PART 7 - INTERACTIVE FINISHING TOUCHES
+========================================= */
 
-    <div class="section-heading">
-        <h2>Explore Our Features</h2>
-        <p>Everything your plants need to grow healthy.</p>
-    </div>
+/* FEATURE CARD HOVER EFFECT */
 
-    <div class="feature-container">
+.feature-card {
+    position: relative;
+    overflow: hidden;
+}
 
-        <!-- AI PLANT DOCTOR -->
-        <a href="{{ url_for('main.plant_doctor') }}"
-           class="feature-card">
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #267a43, #a4d8a9);
+    transition: left 0.4s ease;
+}
 
-            <div class="feature-icon">🔬</div>
+.feature-card:hover::before {
+    left: 0;
+}
 
-            <h3>AI Plant Doctor</h3>
+.feature-card:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #80bd8a;
+    outline-offset: 4px;
+}
 
-            <p>
-                Identify plant diseases and understand
-                possible treatments using AI.
+/* SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 900;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #267a43;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #155b31;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+/* ACCESSIBILITY: REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .feature-card,
+    .back-to-top {
+        transition: none;
+    }
+}
+
+</style>
+
+
+<div class="homepage">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">🌱 WELCOME TO VRIKHSHAM</p>
+
+            <h1>
+                Grow Smarter.<br>
+                <span>Live Greener.</span>
+            </h1>
+
+            <h2>Nature, Powered by Intelligence.</h2>
+
+            <p class="hero-description">
+                Discover a smarter way to care for your plants.
+                Identify plant diseases, understand plant health
+                and get intelligent care recommendations.
+                Your journey towards a greener world starts here.
             </p>
 
-        </a>
+            <div class="hero-buttons">
 
+                <a href="{{ url_for('main.plant_doctor') }}"
+                   class="btn">
+                    🔬 Explore Plant Doctor
+                </a>
 
-        <!-- PLANT CARE ASSISTANT -->
-        <a href="{{ url_for('main.plant_care') }}"
-           class="feature-card">
+                <a href="{{ url_for('main.about') }}"
+                   class="btn btn-outline">
+                    Discover More →
+                </a>
 
-            <div class="feature-icon">🌱</div>
+            </div>
 
-            <h3>Plant Care Assistant</h3>
-
-            <p>
-                Get guidance about watering, sunlight,
-                fertilizer and plant care.
-            </p>
-
-        </a>
-
-
-        <!-- MY GARDEN -->
-        <a href="{{ url_for('main.my_garden') }}"
-           class="feature-card">
-
-            <div class="feature-icon">🌳</div>
-
-            <h3>My Garden</h3>
-
-            <p>
-                Organize your plants and manage
-                your personal garden.
-            </p>
-
-        </a>
-
-
-        <!-- SMART REMINDERS -->
-        <a href="{{ url_for('main.reminders') }}"
-           class="feature-card">
-
-            <div class="feature-icon">⏰</div>
-
-            <h3>Smart Reminders</h3>
-
-            <p>
-                Keep track of watering and
-                fertilizer schedules.
-            </p>
-
-        </a>
-
-
-        <!-- PLANT HEALTH HISTORY -->
-        <a href="{{ url_for('main.health_history') }}"
-           class="feature-card">
-
-            <div class="feature-icon">📊</div>
-
-            <h3>Plant Health History</h3>
-
-            <p>
-                Track previous plant scans and
-                monitor plant health over time.
-            </p>
-
-        </a>
-
-
-        <!-- MULTILINGUAL SUPPORT -->
-        <div class="feature-card">
-
-            <div class="feature-icon">🌍</div>
-
-            <h3>Multilingual Support</h3>
-
-            <p>
-                Access plant-care guidance in
-                multiple languages.
+            <p class="hero-note">
+                🌍 Technology for a greener tomorrow.
             </p>
 
         </div>
 
+
+        <!-- HERO VISUAL -->
+        <div class="hero-visual">
+
+            <div class="plant-circle">
+                <div class="plant-emoji">🪴</div>
+            </div>
+
+            <div class="floating-info info-top">
+                <span class="info-icon">✨</span>
+                <div>
+                    <strong>AI Intelligence</strong>
+                    <small>Smarter plant insights</small>
+                </div>
+            </div>
+
+            <div class="floating-info info-bottom">
+                <span class="info-icon">💧</span>
+                <div>
+                    <strong>Smart Plant Care</strong>
+                    <small>Grow with confidence</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+
+        <div class="section-heading">
+
+            <span class="section-label">DISCOVER VRIKHSHAM</span>
+
+            <h2>Explore Our Features</h2>
+
+            <p>
+                Everything your plants need to grow healthy and strong.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+            <a href="{{ url_for('main.plant_doctor') }}"
+               class="feature-card">
+
+                <div class="feature-icon">🔬</div>
+
+                <h3>AI Plant Doctor</h3>
+
+                <p>
+                    Identify plant diseases and understand
+                    possible treatments using AI.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('main.plant_care') }}"
+               class="feature-card">
+
+                <div class="feature-icon">🌱</div>
+
+                <h3>Plant Care Assistant</h3>
+
+                <p>
+                    Get guidance about watering, sunlight,
+                    fertilizer and plant care.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('main.my_garden') }}"
+               class="feature-card">
+
+                <div class="feature-icon">🌳</div>
+
+                <h3>My Garden</h3>
+
+                <p>
+                    Organize your plants and manage
+                    your personal garden.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('main.reminders') }}"
+               class="feature-card">
+
+                <div class="feature-icon">⏰</div>
+
+                <h3>Smart Reminders</h3>
+
+                <p>
+                    Keep track of watering and
+                    fertilizer schedules.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('main.health_history') }}"
+               class="feature-card">
+
+                <div class="feature-icon">📊</div>
+
+                <h3>Plant Health History</h3>
+
+                <p>
+                    Track previous plant scans and
+                    monitor plant health over time.
+                </p>
+
+            </a>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🌍</div>
+
+                <h3>Multilingual Support</h3>
+
+                <p>
+                    Access plant-care guidance in
+                    multiple languages.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <span class="about-label">OUR VISION</span>
+
+        <h2>About VRIKHSHAM</h2>
+
+        <p>
+            VRIKHSHAM is an AI-powered plant care and
+            management platform designed to help farmers,
+            gardeners and plant lovers make better decisions
+            for healthier plants. By combining artificial
+            intelligence with nature, we aim to make plant care
+            smarter, simpler and more accessible.
+        </p>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <h2>Let's Make the World Greener! 🌍</h2>
+
+        <p>
+            Start your smart plant-care journey with VRIKHSHAM.
+            Discover the power of intelligent plant care.
+        </p>
+
+        <a href="#features" class="btn">
+            Explore Your Green Future →
+        </a>
+
+    </section>
+
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
+
     </div>
-
-</section>
-
-
-<!-- ABOUT SECTION -->
-<section class="about" id="about">
-
-    <h2>About VRIKHSHAM</h2>
-
-    <p>
-        VRIKHSHAM is an AI-powered plant care and
-        management platform designed to help farmers,
-        gardeners and plant lovers make better decisions
-        for healthier plants.
-    </p>
-
-</section>
-
-
-<!-- CALL TO ACTION -->
-<section class="cta">
-
-    <h2>Let's Make the World Greener!</h2>
-
-    <p>
-        Start your smart plant-care journey with VRIKHSHAM.
-    </p>
-
-    <a href="#features" class="btn">
-        Get Started
-    </a>
-
-</section>
 
 {% endblock %}

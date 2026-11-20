@@ -5,33 +5,411 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}VRIKHSHAM{% endblock %}</title>
+    <title>{% block title %}VRIKHSHAM | Nature, Powered by Intelligence{% endblock %}</title>
+
+    <meta name="description" content="VRIKHSHAM - Your intelligent companion for smarter plant care.">
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- VRIKHSHAM HEADER AND FOOTER DESIGN -->
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* HEADER BACKGROUND */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(115deg, #092f20, #145c38, #0b3827);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            min-height: 88px;
+            margin: auto;
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* BRAND LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            font-size: 29px;
+            transition: 0.3s;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-12deg) scale(1.1);
+            background: rgba(255,255,255,0.22);
+        }
+
+        .logo-text {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+
+        .logo-text small {
+            display: block;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #b8e8c4;
+            margin-top: 3px;
+        }
+
+        /* NAVIGATION LINKS */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #e0eee4;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 12px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: rgba(255,255,255,0.13);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            color: #103c27;
+            background: #c4f0ce;
+            box-shadow: 0 4px 15px rgba(160, 255, 180, 0.15);
+        }
+
+        /* AI BADGE */
+
+        .nav-badge {
+            padding: 10px 15px;
+            border-radius: 30px;
+            color: #e2ffbd;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(208,255,185,0.3);
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 0 15px rgba(172,255,164,0.08);
+        }
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            padding: 9px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 23px;
+            height: 2px;
+            background: white;
+            margin: 5px auto;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        /* FOOTER DESIGN */
+
+        .site-footer {
+            margin-top: 70px;
+            padding: 45px 7% 20px;
+            color: white;
+            background: linear-gradient(120deg, #092f20, #145c38);
+        }
+
+        .footer-content {
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        .footer-brand h2 {
+            font-size: 25px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #c7e4cf;
+            font-size: 14px;
+        }
+
+        .footer-message {
+            text-align: right;
+        }
+
+        .footer-message p {
+            color: #e1f7e6;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .footer-message small {
+            color: #a9d6b5;
+        }
+
+        .footer-bottom {
+            max-width: 1250px;
+            margin: auto;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: #c7e4cf;
+            font-size: 12px;
+        }
+
+        /* TABLET AND MOBILE RESPONSIVENESS */
+
+        @media (max-width: 1100px) {
+
+            .navbar {
+                flex-wrap: wrap;
+                padding: 13px 4%;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            .nav-badge {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 5px;
+                padding: 12px;
+                background: rgba(0,0,0,0.16);
+                border-radius: 14px;
+            }
+
+            .nav-links.show {
+                display: flex;
+                animation: menuAppear 0.25s ease;
+            }
+
+            .nav-links a {
+                text-align: center;
+                padding: 13px;
+            }
+        }
+
+        @keyframes menuAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                min-height: 75px;
+                padding: 10px 16px;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 25px;
+            }
+
+            .logo-text {
+                font-size: 19px;
+            }
+
+            .logo-text small {
+                font-size: 8px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-message {
+                text-align: left;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <header>
+    <!-- NAVIGATION BAR -->
+    <header class="site-header">
         <nav class="navbar">
-            <a href="/" class="logo">🌿 VRIKHSHAM</a>
 
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
+            <a href="{{ url_for('main.home') }}" class="logo">
+                <span class="logo-icon">🌿</span>
+
+                <span class="logo-text">
+                    VRIKHSHAM
+                    <small>Nature, Powered by Intelligence</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+
+                <a href="{{ url_for('main.home') }}"
+                   class="{{ 'active' if request.endpoint == 'main.home' else '' }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('main.about') }}"
+                   class="{{ 'active' if request.endpoint == 'main.about' else '' }}">
+                    About
+                </a>
+
+                <a href="{{ url_for('main.plant_doctor') }}"
+                   class="{{ 'active' if request.endpoint == 'main.plant_doctor' else '' }}">
+                    Plant Doctor
+                </a>
+
+                <a href="{{ url_for('main.plant_care') }}"
+                   class="{{ 'active' if request.endpoint == 'main.plant_care' else '' }}">
+                    Plant Care
+                </a>
+
+                <a href="{{ url_for('main.my_garden') }}"
+                   class="{{ 'active' if request.endpoint == 'main.my_garden' else '' }}">
+                    My Garden
+                </a>
+
+                <a href="{{ url_for('main.reminders') }}"
+                   class="{{ 'active' if request.endpoint == 'main.reminders' else '' }}">
+                    Reminders
+                </a>
+
+                <a href="{{ url_for('main.health_history') }}"
+                   class="{{ 'active' if request.endpoint == 'main.health_history' else '' }}">
+                    Health History
+                </a>
+
             </div>
+
+            <div class="nav-badge">
+                ✨ Nature Meets AI
+            </div>
+
         </nav>
     </header>
 
+
+    <!-- MAIN CONTENT -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer>
-        <p>© 2026 VRIKHSHAM | Nature, Powered by Intelligence.</p>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h2>🌿 VRIKHSHAM</h2>
+                <p>Growing a greener future with the power of intelligence.</p>
+            </div>
+
+            <div class="footer-message">
+                <p>Plant today. Protect tomorrow. 🌱</p>
+                <small>Nature, Powered by Intelligence.</small>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 VRIKHSHAM. All Rights Reserved.</p>
+            <p>Made with 💚 for a greener planet.</p>
+        </div>
+
     </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
