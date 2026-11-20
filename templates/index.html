@@ -1,0 +1,171 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home | VRIKHSHAM{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+
+        <p class="tagline">WELCOME TO VRIKHSHAM</p>
+
+        <h1>Grow Smarter.<br>Live Greener.</h1>
+
+        <h2>Nature, Powered by Intelligence.</h2>
+
+        <p>
+            Discover intelligent ways to identify plants,
+            understand plant diseases and take better care
+            of your garden.
+        </p>
+
+        <a href="#features" class="btn">
+            Explore Features
+        </a>
+
+    </div>
+</section>
+
+
+<!-- FEATURES SECTION -->
+<section class="features" id="features">
+
+    <div class="section-heading">
+        <h2>Explore Our Features</h2>
+        <p>Everything your plants need to grow healthy.</p>
+    </div>
+
+    <div class="feature-container">
+
+        <!-- AI PLANT DOCTOR -->
+        <a href="{{ url_for('main.plant_doctor') }}"
+           class="feature-card">
+
+            <div class="feature-icon">🔬</div>
+
+            <h3>AI Plant Doctor</h3>
+
+            <p>
+                Identify plant diseases and understand
+                possible treatments using AI.
+            </p>
+
+        </a>
+
+
+        <!-- PLANT CARE ASSISTANT -->
+        <a href="{{ url_for('main.plant_care') }}"
+           class="feature-card">
+
+            <div class="feature-icon">🌱</div>
+
+            <h3>Plant Care Assistant</h3>
+
+            <p>
+                Get guidance about watering, sunlight,
+                fertilizer and plant care.
+            </p>
+
+        </a>
+
+
+        <!-- MY GARDEN -->
+        <a href="{{ url_for('main.my_garden') }}"
+           class="feature-card">
+
+            <div class="feature-icon">🌳</div>
+
+            <h3>My Garden</h3>
+
+            <p>
+                Organize your plants and manage
+                your personal garden.
+            </p>
+
+        </a>
+
+
+        <!-- SMART REMINDERS -->
+        <a href="{{ url_for('main.reminders') }}"
+           class="feature-card">
+
+            <div class="feature-icon">⏰</div>
+
+            <h3>Smart Reminders</h3>
+
+            <p>
+                Keep track of watering and
+                fertilizer schedules.
+            </p>
+
+        </a>
+
+
+        <!-- PLANT HEALTH HISTORY -->
+        <a href="{{ url_for('main.health_history') }}"
+           class="feature-card">
+
+            <div class="feature-icon">📊</div>
+
+            <h3>Plant Health History</h3>
+
+            <p>
+                Track previous plant scans and
+                monitor plant health over time.
+            </p>
+
+        </a>
+
+
+        <!-- MULTILINGUAL SUPPORT -->
+        <div class="feature-card">
+
+            <div class="feature-icon">🌍</div>
+
+            <h3>Multilingual Support</h3>
+
+            <p>
+                Access plant-care guidance in
+                multiple languages.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+    <h2>About VRIKHSHAM</h2>
+
+    <p>
+        VRIKHSHAM is an AI-powered plant care and
+        management platform designed to help farmers,
+        gardeners and plant lovers make better decisions
+        for healthier plants.
+    </p>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+
+    <h2>Let's Make the World Greener!</h2>
+
+    <p>
+        Start your smart plant-care journey with VRIKHSHAM.
+    </p>
+
+    <a href="#features" class="btn">
+        Get Started
+    </a>
+
+</section>
+
+{% endblock %}
