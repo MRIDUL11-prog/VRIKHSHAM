@@ -1,97 +1,124 @@
 
-<!-- ================= HEADER ================= -->
-
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:064e3b,50:15803d,100:86efac&height=220&section=header&text=VRIKHSHAM&fontSize=65&fontColor=ffffff&fontAlignY=38&desc=Nature%2C%20Powered%20by%20Intelligence&descAlignY=60&descSize=20" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:052e16,35:166534,70:15803d,100:86efac&height=250&section=header&text=VRIKHSHAM&fontSize=75&fontColor=ffffff&fontAlignY=38&desc=Nature%2C%20Powered%20by%20Intelligence&descAlignY=60&descSize=22" width="100%" />
+
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=25&duration=2800&pause=900&color=22C55E&center=true&vCenter=true&width=850&lines=Welcome+to+VRIKHSHAM+%F0%9F%8C%B1;Your+Intelligent+Plant+Care+Companion;Grow+Smarter.+Live+Greener.;Technology+Meets+Nature+%F0%9F%8C%BF" alt="VRIKHSHAM animated typing" />
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=23&duration=3000&pause=1000&color=16A34A&center=true&vCenter=true&width=750&lines=Your+Intelligent+Plant+Care+Companion+%F0%9F%8C%B1;Grow+Smarter%2C+Live+Greener+%F0%9F%8C%BF;AI-Powered+Plant+Health+Assistant+%F0%9F%A4%96;Making+Plant+Care+Simple+and+Smart+%F0%9F%8C%8D" alt="Typing SVG" />
+<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Flask-Framework-000000?style=for-the-badge&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge" />
 
 <br/><br/>
 
-<p>
-  <img src="https://img.shields.io/badge/Project-VRIKHSHAM-15803d?style=for-the-badge&logo=leaflet&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flask-Web%20Framework-000000?style=for-the-badge&logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-</p>
+**An intelligent plant care and garden management ecosystem.**
 
-**An intelligent platform designed to make plant care easier, smarter, and more accessible.**
+*Helping people understand, protect, and grow their plants with technology.*
 
 </div>
 
 ---
 
-<!-- ================= ABOUT ================= -->
-
 ## 🌿 About VRIKHSHAM
 
-**VRIKHSHAM** is an AI-powered plant care and garden management web application designed to help people understand, monitor, and care for their plants.
+VRIKHSHAM is an AI-powered plant care and garden management web application designed to make plant care smarter, simpler, and more accessible.
 
-The platform aims to combine Artificial Intelligence with modern web technologies to provide intelligent plant identification, plant health analysis, personalized care recommendations, and smart garden management.
+By combining Artificial Intelligence with modern web technologies, VRIKHSHAM aims to help users identify plants, understand plant health, receive personalized care recommendations, and manage their personal gardens.
 
-Our mission is simple:
+Our vision is to bring technology closer to nature.
 
-> Make plant care smarter through technology and make the world greener through awareness.
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:14532d,100:166534&height=3&section=header" width="80%" />
+
+### 🌱 Grow Smarter. Live Greener.
+
+</div>
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🤖 AI Plant Doctor
-- Identify plants using images.
-- Analyze possible plant diseases.
-- Get intelligent treatment suggestions.
+<h3>🤖 AI Plant Doctor</h3>
+
+<img src="https://img.shields.io/badge/AI-Plant%20Analysis-16A34A?style=flat-square" />
+
+- Plant identification through images.
+- Analysis of possible plant diseases.
+- Intelligent treatment suggestions.
+- Plant health assistance.
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🌱 AI Plant Care Assistant
-- Personalized plant care guidance.
-- Watering and sunlight recommendations.
+<h3>🌿 AI Plant Care Assistant</h3>
+
+<img src="https://img.shields.io/badge/Smart-Personalized%20Care-16A34A?style=flat-square" />
+
+- Watering recommendations.
+- Sunlight guidance.
 - Soil and fertilizer suggestions.
+- Personalized plant care advice.
 
 </td>
 </tr>
-<tr>
-<td width="50%">
 
-### 🪴 My Garden
+<tr>
+<td width="50%" valign="top">
+
+<h3>🪴 My Garden</h3>
+
+<img src="https://img.shields.io/badge/Garden-Personal%20Management-16A34A?style=flat-square" />
+
 - Add and manage personal plants.
 - Store plant information.
 - Monitor plant health.
+- Organize your garden.
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-### ⏰ Smart Reminders
-- Watering reminders.
-- Fertilizer schedules.
-- Plant maintenance notifications.
+<h3>⏰ Smart Reminders</h3>
+
+<img src="https://img.shields.io/badge/Smart-Notifications-16A34A?style=flat-square" />
+
+- Watering schedules.
+- Fertilizer reminders.
+- Plant maintenance tasks.
+- Reminder management.
 
 </td>
 </tr>
-<tr>
-<td width="50%">
 
-### 📊 Plant Health History
+<tr>
+<td width="50%" valign="top">
+
+<h3>📊 Plant Health History</h3>
+
+<img src="https://img.shields.io/badge/Plant-Health%20Tracking-16A34A?style=flat-square" />
+
 - Maintain plant health records.
 - Track previous observations.
 - Monitor plant progress.
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🌍 Multilingual Experience
-- English support.
-- Hindi support.
-- Bengali support.
+<h3>🌍 Multilingual Support</h3>
+
+<img src="https://img.shields.io/badge/Language-Multilingual-16A34A?style=flat-square" />
+
+- English.
+- Hindi.
+- Bengali.
+- Accessible plant care experience.
 
 </td>
 </tr>
@@ -99,21 +126,29 @@ Our mission is simple:
 
 ---
 
-## 🖼️ Project Preview
+## 🖥️ User Interface Preview
 
 <div align="center">
 
-<!-- Replace these placeholders with your actual screenshots later -->
+### 🏡 Homepage
 
-| Homepage | Plant Doctor |
-|:---:|:---:|
-| Add homepage screenshot here | Add Plant Doctor screenshot here |
+<img src="static/images/homepage-preview.png" width="90%" alt="VRIKHSHAM Homepage Preview" />
 
-| My Garden | Smart Reminders |
-|:---:|:---:|
-| Add My Garden screenshot here | Add Reminders screenshot here |
+<br/>
+
+### 🤖 AI Plant Doctor
+
+<img src="static/images/plant-doctor-preview.png" width="90%" alt="VRIKHSHAM Plant Doctor Preview" />
+
+<br/>
+
+### 🪴 My Garden
+
+<img src="static/images/my-garden-preview.png" width="90%" alt="VRIKHSHAM My Garden Preview" />
 
 </div>
+
+> Add your actual screenshots using the filenames shown above when they are ready.
 
 ---
 
@@ -121,19 +156,35 @@ Our mission is simple:
 
 <div align="center">
 
+### Backend
+
+<img src="https://skillicons.dev/icons?i=python,flask" />
+
+### Database
+
+<img src="https://skillicons.dev/icons?i=postgresql" />
+
+### Frontend
+
+<img src="https://skillicons.dev/icons?i=html,css,js" />
+
+### Tools & AI
+
+<img src="https://skillicons.dev/icons?i=git,github,vscode" />
+
+</div>
+
 | Technology | Purpose |
-|:---|:---|
+|---|---|
 | Python | Backend programming |
-| Flask | Web application framework |
+| Flask | Web framework |
 | PostgreSQL | Relational database |
 | Flask-SQLAlchemy | Database ORM |
-| HTML5 | Page structure |
-| CSS3 | Styling and responsive design |
+| HTML5 | Webpage structure |
+| CSS3 | Styling and responsive UI |
 | JavaScript | Frontend interactions |
 | Gemini API | Planned AI integration |
 | Git & GitHub | Version control |
-
-</div>
 
 ---
 
@@ -187,7 +238,7 @@ VRIKHSHAM/
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to run VRIKHSHAM locally.
+Follow these instructions to run VRIKHSHAM on your local machine.
 
 ### 1. Clone the repository
 
@@ -195,7 +246,7 @@ Follow these steps to run VRIKHSHAM locally.
 git clone https://github.com/MRIDUL11-prog/VRIKHSHAM.git
 ```
 
-### 2. Navigate to the project folder
+### 2. Open the project folder
 
 ```bash
 cd VRIKHSHAM
@@ -209,7 +260,7 @@ python -m venv venv
 
 ### 4. Activate the virtual environment
 
-Windows:
+For Windows:
 
 ```bash
 venv\Scripts\activate
@@ -223,16 +274,16 @@ pip install -r requirements.txt
 
 ### 6. Configure environment variables
 
-Create a `.env` file in the root directory.
+Create a `.env` file in the project root directory.
 
 ```env
 SECRET_KEY=your_secret_key
 DATABASE_URL=postgresql+psycopg://postgres:YOUR_PASSWORD@localhost:5432/vriksham_db
 ```
 
-Replace `YOUR_PASSWORD` with your local PostgreSQL password.
+Replace `YOUR_PASSWORD` with your PostgreSQL password.
 
-**Important:** Never upload your `.env` file or expose your database credentials.
+**Security:** Never upload `.env` or expose database credentials on GitHub.
 
 ### 7. Create the PostgreSQL database
 
@@ -256,92 +307,54 @@ http://127.0.0.1:5000/
 
 ---
 
-## 🚀 Development Roadmap
+## 🔐 Security & Privacy
 
-| Phase | Development | Status |
-|:---|:---|:---|
-| Day 1 | Project setup and Flask configuration | ✅ Completed |
-| Day 2 | Frontend pages and navigation | ✅ Completed |
-| Day 3 | PostgreSQL and database models | ✅ Completed |
-| Day 4 | User registration and login | ✅ Completed |
-| Day 5 | Authentication and user-specific data | ✅ Completed |
-| Days 6–8 | My Garden Management | 🔄 Planned |
-| Days 9–11 | Smart Reminders | 📌 Upcoming |
-| Days 12–14 | Plant Health History | 📌 Upcoming |
-| Days 15–18 | AI Plant Doctor | 📌 Upcoming |
-| Days 19–21 | AI Plant Care Assistant | 📌 Upcoming |
-| Days 22–24 | Admin Dashboard | 📌 Upcoming |
-| Days 25–27 | Advanced Features | 📌 Upcoming |
-| Days 28–30 | Testing and Deployment | 📌 Upcoming |
+VRIKHSHAM is being developed with security in mind.
 
----
-
-## 🔐 Security
-
-VRIKHSHAM follows important security practices:
-
-- Password hashing for user authentication.
-- Environment variables for sensitive configuration.
-- User-specific database queries.
-- Git ignore rules for private files.
+- Secure password hashing.
+- Environment-based secret configuration.
+- User-specific database access.
 - Session-based authentication.
-
-Security will continue to improve throughout development.
+- Git ignore rules for private files.
+- Database-backed application architecture.
 
 ---
 
-## 🌟 Future Vision
+## 🌍 Our Vision
 
-Our future goals include:
+We believe technology can make plant care easier for everyone.
 
-- Advanced AI-based plant disease detection.
+VRIKHSHAM aims to create a smarter and more sustainable future through:
+
+- AI-powered plant health assistance.
 - Personalized plant care recommendations.
-- Weather-aware watering suggestions.
-- Automated notification system.
-- Interactive garden dashboard.
-- Mobile-friendly experience.
-- Multilingual support.
+- Intelligent watering suggestions.
+- Better garden management.
+- Multilingual accessibility.
+- A user-friendly digital gardening experience.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, ideas, and suggestions are welcome!
+Ideas, feedback, and contributions are welcome!
 
-If you would like to contribute:
-
-1. Fork this repository.
-2. Create a new feature branch.
+1. Fork the repository.
+2. Create a feature branch.
 3. Make your changes.
 4. Commit your changes.
 5. Submit a Pull Request.
 
 ---
 
-## 👨‍💻 Developer
-
 <div align="center">
 
-### Developed with 💚 by
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&duration=3000&pause=1000&color=16A34A&center=true&vCenter=true&width=650&lines=Thank+you+for+visiting+VRIKHSHAM!+%F0%9F%8C%B1;Let's+make+the+world+greener!+%F0%9F%8C%8D;Nature%2C+Powered+by+Intelligence." alt="Closing animation" />
 
-**MRIDUL SAHA**
+<br/>
 
-BCA Student | Aspiring Software Developer
+**If you like this project, consider giving it a ⭐ on GitHub!**
 
-<a href="https://github.com/MRIDUL11-prog">
-  <img src="https://img.shields.io/badge/GitHub-MRIDUL11--prog-181717?style=for-the-badge&logo=github" />
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-### 🌱 Grow Smarter. Live Greener.
-
-**VRIKHSHAM — Nature, Powered by Intelligence.**
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:86efac,50:15803d,100:064e3b&height=120&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:86efac,50:15803d,100:052e16&height=150&section=footer" width="100%" />
 
 </div>
