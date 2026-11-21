@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ | VRIKHSHAM{% endblock %}
+
+{% block content %}
+<style>
+.faq-page {
+    --faq-green: #267a43;
+    --faq-dark: #173b29;
+    --faq-mint: #eef7ef;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 24px 30px;
+}
+
+.faq-hero {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 34px;
+    padding: 52px 56px;
+    border: 1px solid #dfeade;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(96, 170, 105, .18), transparent 24%),
+        linear-gradient(135deg, #edf7ec 0%, #f9fcf8 70%);
+}
+
+.faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--faq-green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.faq-hero h1 {
+    max-width: 650px;
+    margin: 0 0 12px;
+    color: var(--faq-dark);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
+}
+
+.faq-hero p {
+    max-width: 620px;
+    color: #67796b;
+    font-size: 16px;
+}
+
+.faq-hero-art {
+    width: 220px;
+    height: 220px;
+    justify-self: end;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6edda, #afd5b5);
+    box-shadow: 0 22px 50px rgba(38, 122, 67, .16);
+    font-size: 105px;
+}
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 30px;
+}
+
+.faq-categories {
+    align-self: start;
+    position: sticky;
+    top: 110px;
+}
+
+.faq-categories h2 {
+    margin-bottom: 11px;
+    color: #7b8d7e;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.faq-categories a {
+    display: block;
+    margin: 4px 0;
+    padding: 11px 13px;
+    border-radius: 9px;
+    color: #526b59;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.faq-categories a:hover {
+    color: var(--faq-green);
+    background: var(--faq-mint);
+}
+
+.faq-section {
+    margin-bottom: 34px;
+    scroll-margin-top: 110px;
+}
+
+.faq-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    color: var(--faq-dark);
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+}
+
+.faq-section-heading span {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #e4f3e6;
+    font-size: 18px;
+}
+
+.faq-list {
+    display: grid;
+    gap: 10px;
+}
+
+.faq-item {
+    overflow: hidden;
+    border: 1px solid #e0e9e1;
+    border-radius: 14px;
+    background: #fff;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.faq-item[open] {
+    border-color: #bddbbf;
+    box-shadow: 0 10px 28px rgba(31, 83, 47, .08);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 22px;
+    color: #244832;
+    font-weight: 750;
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--faq-green);
+    background: #edf7ef;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform .2s, background .2s;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+    background: #dfeee1;
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    margin: 0;
+    padding: 0 62px 20px 22px;
+    color: #66766a;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.faq-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 20px;
+    padding: 28px 32px;
+    border-radius: 18px;
+    background: #173f2b;
+    color: white;
+}
+
+.faq-contact h2 {
+    margin-bottom: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+}
+
+.faq-contact p {
+    color: #c8dfce;
+    font-size: 14px;
+}
+
+.faq-contact a {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #caf0d2;
+    color: #17452b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.faq-contact a:hover {
+    background: #aee2bb;
+}
+
+@media (max-width: 850px) {
+    .faq-hero {
+        grid-template-columns: 1fr;
+        padding: 42px 34px;
+    }
+
+    .faq-hero-art {
+        display: none;
+    }
+
+    .faq-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-categories {
+        position: static;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .faq-categories h2 {
+        display: none;
+    }
+
+    .faq-categories a {
+        flex: 0 0 auto;
+        border: 1px solid #e0e9e1;
+        background: white;
+    }
+}
+
+@media (max-width: 520px) {
+    .faq-page {
+        padding: 40px 14px 10px;
+    }
+
+    .faq-hero {
+        padding: 32px 22px;
+        border-radius: 20px;
+    }
+
+    .faq-hero h1 {
+        font-size: 38px;
+    }
+
+    .faq-item summary {
+        padding: 17px 16px;
+    }
+
+    .faq-answer {
+        padding: 0 16px 18px;
+    }
+
+    .faq-contact {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px 22px;
+    }
+}
+</style>
+
+<div class="faq-page">
+    <section class="faq-hero">
+        <div>
+            <span class="faq-eyebrow">🌿 Help Center</span>
+            <h1>Frequently asked questions</h1>
+            <p>Everything you need to know about using VRIKHSHAM to care for, monitor, and understand your plants.</p>
+        </div>
+        <div class="faq-hero-art" aria-hidden="true">🌱</div>
+    </section>
+
+    <div class="faq-layout">
+        <nav class="faq-categories" aria-label="FAQ categories">
+            <h2>Browse topics</h2>
+            <a href="#getting-started">Getting started</a>
+            <a href="#features">Features</a>
+            <a href="#account">Account &amp; privacy</a>
+        </nav>
+
+        <div>
+            <section class="faq-section" id="getting-started">
+                <h2 class="faq-section-heading"><span>🌱</span> Getting started</h2>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary>What is VRIKHSHAM?</summary>
+                        <p class="faq-answer">VRIKHSHAM is an intelligent plant care platform that helps you organize your garden, learn about plant care, track health records, and receive practical reminders.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I need an account to use VRIKHSHAM?</summary>
+                        <p class="faq-answer">You can explore public sections such as the homepage and plant care guidance without an account. Creating a free account is required to save a garden, add plants, and view personal reminders.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do I add my first plant?</summary>
+                        <p class="faq-answer">Register or log in, open My Garden, and use the plant form to add a name and the basic details of your plant. You can then manage it from your garden dashboard.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="faq-section" id="features">
+                <h2 class="faq-section-heading"><span>🔬</span> Features</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>How does the AI Plant Doctor work?</summary>
+                        <p class="faq-answer">The Plant Doctor is designed to guide you through plant health concerns. Share the relevant plant symptoms or details, then use the suggested observations and care actions as a starting point for diagnosis.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can VRIKHSHAM tell me when to water my plants?</summary>
+                        <p class="faq-answer">Yes. VRIKHSHAM supports care reminders and plant care guidance. Reminders can help you plan watering and maintenance based on the schedule you add for each plant.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where can I view a plant's health history?</summary>
+                        <p class="faq-answer">Open Health History from the navigation menu. It brings together saved plant health information and previous records for plants in your account.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is the care advice suitable for every plant?</summary>
+                        <p class="faq-answer">General guidance is a useful foundation, but plant needs vary by species, climate, soil, and season. When in doubt, use species-specific advice or consult a local horticulture expert.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="faq-section" id="account">
+                <h2 class="faq-section-heading"><span>🔒</span> Account &amp; privacy</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>How is my account information protected?</summary>
+                        <p class="faq-answer">Your account uses authentication to restrict access to personal garden features. Use a strong, unique password and avoid sharing your login details with others.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I remove my plants or garden data?</summary>
+                        <p class="faq-answer">Garden management features allow you to maintain the plants and records associated with your account. If you need assistance removing information that cannot be edited, contact the project owner.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What should I do if I forget my password?</summary>
+                        <p class="faq-answer">Use the password recovery option available on the login page, when enabled for your deployment. If it is unavailable, contact the site administrator for help restoring access.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="faq-contact">
+                <div>
+                    <h2>Still have a question?</h2>
+                    <p>Explore Plant Care or start by adding your first plant.</p>
+                </div>
+                <a href="{{ url_for('main.plant_care') }}">View Plant Care →</a>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
