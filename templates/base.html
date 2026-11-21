@@ -643,6 +643,12 @@
                                 About
                             </a>
 
+                            <a href="{{ url_for('main.faq') }}"
+                               class="{{ 'active' if request.endpoint == 'main.faq' else '' }}">
+                                <span class="dropdown-icon">❓</span>
+                                FAQ
+                            </a>
+
                             <a href="{{ url_for('main.plant_doctor') }}"
                                class="{{ 'active' if request.endpoint == 'main.plant_doctor' else '' }}">
                                 <span class="dropdown-icon">🩺</span>
@@ -727,6 +733,8 @@
                         <a href="{{ url_for('main.home') }}">Home</a>
 
                         <a href="{{ url_for('main.about') }}">About Us</a>
+
+                        <a href="{{ url_for('main.faq') }}">FAQs</a>
 
                         <a href="{{ url_for('main.plant_doctor') }}">
                             AI Plant Doctor
