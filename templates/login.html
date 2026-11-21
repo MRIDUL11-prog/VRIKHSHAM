@@ -1,0 +1,154 @@
+
+{% extends "base.html" %}
+
+{% block title %}Login | VRIKHSHAM{% endblock %}
+
+{% block content %}
+
+<style>
+.login-section {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f3f8f1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #245c36;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 28px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #344b38;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #d5dfd3;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #32834b;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #267a43;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #155b31;
+}
+
+.login-message {
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-error {
+    background: #fff0f0;
+    color: #c62828;
+}
+
+.login-register {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.login-register a {
+    color: #267a43;
+    text-decoration: none;
+    font-weight: 600;
+}
+</style>
+
+<section class="login-section">
+    <div class="login-card">
+
+        <h1>Welcome Back 🌿</h1>
+
+        <p class="login-subtitle">
+            Login to continue your VRIKHSHAM journey.
+        </p>
+
+        {% if error %}
+            <div class="login-message login-error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form class="login-form"
+              method="POST"
+              action="{{ url_for('auth.login') }}">
+
+            <!-- Preserve the originally requested page -->
+            <input type="hidden"
+                   name="next"
+                   value="{{ request.args.get('next', '') }}">
+
+            <label for="email">Email Address</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   autocomplete="email"
+                   required>
+
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter your password"
+                   autocomplete="current-password"
+                   required>
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="login-register">
+            Don't have an account?
+            <a href="{{ url_for('auth.register') }}">Register</a>
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}
