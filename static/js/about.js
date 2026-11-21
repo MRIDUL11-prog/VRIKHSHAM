@@ -1,0 +1,34 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sections = document.querySelectorAll(
+        ".section-padding, .about-hero, .about-cta"
+    );
+
+    if (!("IntersectionObserver" in window)) {
+        return;
+    }
+
+    sections.forEach(function (section) {
+        section.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    sections.forEach(function (section) {
+        observer.observe(section);
+    });
+
+});
