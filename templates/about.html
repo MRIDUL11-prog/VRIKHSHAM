@@ -1,15 +1,257 @@
 
 {% extends "base.html" %}
 
-{% block title %}About | VRIKHSHAM{% endblock %}
+{% block title %}About Us | VRIKHSHAM{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
 
 {% block content %}
-<section class="about">
-    <h1>About VRIKHSHAM 🌱</h1>
-    <p>
-        VRIKHSHAM is an AI-powered plant care and
-        management platform designed to help farmers,
-        gardeners and plant lovers.
-    </p>
+
+<!-- HERO SECTION -->
+<section class="about-hero">
+    <div class="hero-content">
+        <span class="eyebrow">🌱 NATURE MEETS INTELLIGENCE</span>
+
+        <h1>Growing a Greener Tomorrow,<br>
+            <span>One Plant at a Time.</span>
+        </h1>
+
+        <p>
+            Bringing the power of Artificial Intelligence and the beauty
+            of nature together to make plant care smarter, simpler and
+            more accessible for everyone.
+        </p>
+
+        <a href="{{ url_for('main.plant_care') }}" class="about-btn">
+            Explore Plant Care →
+        </a>
+    </div>
+
+    <div class="hero-decoration">
+        <div class="hero-circle">🌿</div>
+        <div class="floating-leaf leaf-one">🍃</div>
+        <div class="floating-leaf leaf-two">🌱</div>
+        <div class="floating-leaf leaf-three">🌿</div>
+    </div>
 </section>
+
+
+<!-- INTRODUCTION -->
+<section class="about-intro section-padding">
+
+    <div class="section-label">WHO WE ARE</div>
+
+    <h2>Meet <span>VRIKHSHAM</span></h2>
+
+    <p class="intro-text">
+        VRIKHSHAM is an AI-powered plant care and management platform
+        designed for farmers, gardeners and plant enthusiasts.
+
+        We believe that taking care of plants should not be complicated.
+        With intelligent technology, personalised guidance and easy-to-use
+        tools, we help people understand their plants and care for them
+        better.
+    </p>
+
+</section>
+
+
+<!-- WHY VRIKHSHAM -->
+<section class="why-section section-padding">
+
+    <div class="section-label">OUR PURPOSE</div>
+
+    <h2>Why Choose <span>VRIKHSHAM?</span></h2>
+
+    <p class="section-description">
+        Because every plant deserves the right care.
+    </p>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="card-icon">🔍</div>
+            <h3>Identify Plants</h3>
+            <p>
+                Discover and learn about different plants with
+                intelligent plant identification assistance.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="card-icon">🩺</div>
+            <h3>Understand Plant Health</h3>
+            <p>
+                Get AI-assisted insights into possible plant health
+                problems and learn about suitable care.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="card-icon">💬</div>
+            <h3>Smart Assistance</h3>
+            <p>
+                Get helpful answers to your plant-related questions
+                through an AI-powered assistant.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="card-icon">⏰</div>
+            <h3>Never Miss Plant Care</h3>
+            <p>
+                Organise watering and other care activities with
+                personalised reminders.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="features-section section-padding">
+
+    <div class="section-label">WHAT WE OFFER</div>
+
+    <h2>Everything Your Plants <span>Need</span></h2>
+
+    <div class="features-grid">
+
+        <div class="feature-item">
+            <span>🌿</span>
+            <div>
+                <h3>AI Plant Doctor</h3>
+                <p>Explore possible plant health issues using AI-assisted image analysis.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span>📸</span>
+            <div>
+                <h3>Plant Identification</h3>
+                <p>Learn more about plants through intelligent identification.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span>🤖</span>
+            <div>
+                <h3>AI Plant Assistant</h3>
+                <p>Ask questions and get helpful plant care guidance.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span>🪴</span>
+            <div>
+                <h3>My Garden</h3>
+                <p>Keep your plants organised in one convenient place.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span>🔔</span>
+            <div>
+                <h3>Smart Reminders</h3>
+                <p>Stay organised with reminders for important plant care tasks.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span>📊</span>
+            <div>
+                <h3>Health History</h3>
+                <p>Keep track of your plants and their recorded health information.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MISSION AND VISION -->
+<section class="mission-section section-padding">
+
+    <div class="mission-card">
+        <div class="mission-icon">🎯</div>
+        <h2>Our Mission</h2>
+        <p>
+            To make plant care accessible, understandable and
+            intelligent by combining technology with nature.
+            We want to empower everyone to become a better
+            plant caretaker.
+        </p>
+    </div>
+
+    <div class="mission-card vision-card">
+        <div class="mission-icon">🌍</div>
+        <h2>Our Vision</h2>
+        <p>
+            To build a future where technology encourages people
+            to connect with nature, grow healthier plants and
+            contribute towards a greener planet.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+<section class="technology-section section-padding">
+
+    <div class="tech-content">
+        <div class="section-label">TECHNOLOGY WITH A PURPOSE</div>
+
+        <h2>Powered by <span>Innovation</span></h2>
+
+        <p>
+            VRIKHSHAM combines modern web technologies and Generative AI
+            to create a smarter plant care experience.
+        </p>
+
+        <div class="tech-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Artificial Intelligence</span>
+            <span>Generative AI</span>
+            <span>MySQL</span>
+        </div>
+
+        <p class="tech-note">
+            Our goal is to make intelligent plant care easier to access,
+            including through support for multiple languages.
+        </p>
+    </div>
+
+    <div class="tech-illustration">
+        <div class="tech-emoji">🌳</div>
+        <span>Technology for a greener tomorrow.</span>
+    </div>
+
+</section>
+
+
+<!-- CLOSING CTA -->
+<section class="about-cta">
+
+    <span>🌱</span>
+
+    <h2>Let's Grow a Greener Future Together.</h2>
+
+    <p>
+        Every small step towards better plant care makes a difference.
+    </p>
+
+    <a href="{{ url_for('main.home') }}" class="about-btn">
+        Back to Home →
+    </a>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+
 {% endblock %}

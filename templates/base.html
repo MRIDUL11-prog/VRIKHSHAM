@@ -1,10 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("vriksham-theme");
+            const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)"
+            ).matches;
+
+            document.documentElement.dataset.theme =
+                savedTheme === "light" || savedTheme === "dark"
+                    ? savedTheme
+                    : prefersDark ? "dark" : "light";
+        })();
+    </script>
 
     <title>
         {% block title %}
@@ -17,6 +30,8 @@
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/theme.css') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +66,7 @@
                 #104d31,
                 #0a3625
             );
-            box-shadow: 0 8px 30px rgba(0, 30, 15, 0.22);
+            box-shadow: none;
             border-bottom: 1px solid rgba(255,255,255,0.12);
         }
 
@@ -76,42 +91,6 @@
             align-items: center;
             gap: 13px;
             text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 52px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            font-size: 29px;
-            background: rgba(255,255,255,0.13);
-            border: 1px solid rgba(255,255,255,0.22);
-            transition: 0.3s;
-        }
-
-        .logo:hover .logo-icon {
-            transform: rotate(-10deg) scale(1.08);
-        }
-
-        .logo-text {
-            color: white;
-            font-family: 'Outfit', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            line-height: 1.2;
-        }
-
-        .logo-text small {
-            display: block;
-            color: #b9e9c8;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-top: 5px;
         }
 
         /* HEADER RIGHT */
@@ -229,17 +208,25 @@
             border-color: #b9e9c8;
         }
 
-        .hamburger-icon {
+        .menu-toggle .hamburger-icon {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex: 0 0 21px;
+            width: 21px;
+            height: 16px;
+            margin: 0;
             gap: 5px;
+            background: transparent;
+            border-radius: 0;
         }
 
-        .hamburger-icon span {
+        .menu-toggle .hamburger-icon span {
             display: block;
+            flex: 0 0 2px;
             width: 21px;
             height: 2px;
+            margin: 0;
             background: white;
             border-radius: 5px;
             transition: 0.3s;
@@ -247,7 +234,7 @@
 
         /* MENU LABEL ALIGNMENT */
 
-        .menu-label {
+        .menu-toggle .menu-label {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -260,6 +247,8 @@
             position: relative;
             top: -1px;
             white-space: nowrap;
+            background: transparent;
+            border-radius: 0;
         }
 
         .menu-toggle[aria-expanded="true"] .hamburger-icon span:first-child {
@@ -285,7 +274,7 @@
             border-radius: 16px;
             background: #ffffff;
             border: 1px solid #e2eee4;
-            box-shadow: 0 15px 45px rgba(0,40,20,0.20);
+            box-shadow: none;
 
             opacity: 0;
             visibility: hidden;
@@ -454,26 +443,6 @@
                 gap: 8px;
             }
 
-            .logo {
-                gap: 8px;
-            }
-
-            .logo-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 24px;
-            }
-
-            .logo-text {
-                font-size: 18px;
-                letter-spacing: 1.5px;
-            }
-
-            .logo-text small {
-                font-size: 8px;
-                letter-spacing: 0.4px;
-            }
-
             .nature-badge {
                 display: none;
             }
@@ -503,7 +472,7 @@
                 padding: 0;
             }
 
-            .menu-label {
+            .menu-toggle .menu-label {
                 display: none;
             }
 
@@ -536,6 +505,8 @@
 
     </style>
 
+    {% block extra_css %}{% endblock %}
+
 </head>
 
 <body>
@@ -551,14 +522,13 @@
                 <!-- LOGO -->
 
                 <a href="{{ url_for('main.home') }}" class="logo">
-
-                    <span class="logo-icon">🌿</span>
-
-                    <span class="logo-text">
-                        VRIKHSHAM
-                        <small>Nature, Powered by Intelligence</small>
-                    </span>
-
+                    <img class="brand-logo brand-logo--light"
+                         src="{{ url_for('static', filename='images/vriksham-light.jpg') }}"
+                         alt="VRIKHSHAM - Care That Blooms">
+                    <img class="brand-logo brand-logo--dark"
+                         src="{{ url_for('static', filename='images/vriksham-dark.jpg') }}"
+                         alt=""
+                         aria-hidden="true">
                 </a>
 
                 <!-- HEADER RIGHT -->
@@ -603,6 +573,16 @@
                         {% endif %}
 
                     </div>
+
+                    <button class="theme-toggle"
+                            id="theme-toggle"
+                            type="button"
+                            aria-label="Toggle color theme"
+                            aria-pressed="false"
+                            title="Toggle color theme">
+                        <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+                        <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+                    </button>
 
                     <!-- HAMBURGER DROPDOWN -->
 
@@ -842,6 +822,38 @@
             }
 
         });
+
+        (function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            const root = document.documentElement;
+
+            if (!themeToggle) {
+                return;
+            }
+
+            function updateTheme(theme, savePreference) {
+                const isDark = theme === "dark";
+                root.dataset.theme = isDark ? "dark" : "light";
+                themeToggle.setAttribute(
+                    "aria-label",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+                themeToggle.setAttribute("aria-pressed", String(isDark));
+
+                if (savePreference) {
+                    localStorage.setItem("vriksham-theme", root.dataset.theme);
+                }
+            }
+
+            updateTheme(root.dataset.theme, false);
+
+            themeToggle.addEventListener("click", function () {
+                updateTheme(
+                    root.dataset.theme === "dark" ? "light" : "dark",
+                    true
+                );
+            });
+        })();
 
     </script>
 
